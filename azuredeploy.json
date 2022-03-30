@@ -191,6 +191,32 @@
                     }
                 }
             }
+        },
+        {
+            "name": "[concat(variables('vmname'),'/customScript1')]",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2021-03-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "Minikube installation"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', variables('vmname'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.1",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/scripts/customscript.sh"
+                    ]
+                },
+                "protectedSettings": {
+                    "commandToExecute": "bash customScript.sh"
+                }
+            }
         }
     ],
     "outputs": {
