@@ -214,7 +214,7 @@
                     ]
                 },
                 "protectedSettings": {
-                    "commandToExecute": "bash customScript.sh"
+                    "commandToExecute": "bash customscript.sh"
                 }
             }
         }
