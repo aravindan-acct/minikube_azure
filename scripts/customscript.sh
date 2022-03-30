@@ -12,6 +12,6 @@ echo "moving kubectl to /usr/local/bin"
 sudo mv kubectl /usr/local/bin/
 echo "installing docker"
 sudo apt install -y docker.io
-
-#sudo usermod -aG docker $USER && newgrp docker
+echo "adding labuser to docker group"
+sudo usermod -aG docker labuser && newgrp docker
 
