@@ -15,12 +15,13 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 
+    azureResourceManagerConnection: 'WAF Engineering(490510b5-6cc9-41de-95e9-44e31b0f3f36)'
     subscriptionId: '490510b5-6cc9-41de-95e9-44e31b0f3f36'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'aravindanminikube'
     location: 'South Central US'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.parameters.json'
-    deploymentMode: 'Incremental'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.json'
+    csmParametersFile: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.parameters.json'
+    deploymentMode: 'Incremental''
+  
