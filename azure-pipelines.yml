@@ -23,5 +23,4 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.json'
     csmParametersFile: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.parameters.json'
-    deploymentMode: 'Incremental''
-  
+    deploymentMode: 'Incremental'
