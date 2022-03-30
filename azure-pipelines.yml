@@ -1,0 +1,26 @@
+
+   
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 
+    subscriptionId: '490510b5-6cc9-41de-95e9-44e31b0f3f36'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'aravindanminikube'
+    location: 'South Central US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/aravindan-acct/minikube_azure/main/azuredeploy.parameters.json'
+    deploymentMode: 'Incremental'
